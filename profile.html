@@ -1,0 +1,678 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Customer Account View - Ocean Bank Agent Portal</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: #e9ecef;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        .nav {
+            display: flex;
+            gap: 2rem;
+        }
+
+        .nav-link {
+            color: white;
+            text-decoration: none;
+            font-weight: 500;
+            transition: opacity 0.3s;
+        }
+
+        .nav-link:hover {
+            opacity: 0.8;
+        }
+
+        .agent-header {
+            background: #2c3e50;
+            color: white;
+            padding: 1rem 0;
+            border-bottom: 3px solid #0066cc;
+        }
+
+        .agent-header-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 1rem;
+        }
+
+        .agent-info {
+            display: flex;
+            align-items: center;
+            gap: 2rem;
+        }
+
+        .agent-name {
+            font-weight: 600;
+            font-size: 1.1rem;
+        }
+
+        .call-status {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 0.5rem 1rem;
+            background: #28a745;
+            border-radius: 5px;
+            font-size: 0.9rem;
+        }
+
+        .call-status-dot {
+            width: 8px;
+            height: 8px;
+            background: white;
+            border-radius: 50%;
+            animation: pulse 2s infinite;
+        }
+
+        @keyframes pulse {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0.5; }
+        }
+
+        .customer-banner {
+            background: white;
+            border-bottom: 2px solid #0066cc;
+            padding: 1.5rem 0;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+
+        .customer-banner-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 2rem;
+        }
+
+        .customer-primary-info {
+            display: flex;
+            gap: 3rem;
+            align-items: center;
+        }
+
+        .customer-name {
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: #2c3e50;
+            margin-bottom: 0.3rem;
+        }
+
+        .customer-id {
+            color: #666;
+            font-size: 0.95rem;
+        }
+
+        .verification-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 0.5rem 1rem;
+            background: #d4edda;
+            color: #155724;
+            border-radius: 5px;
+            font-weight: 600;
+            font-size: 0.9rem;
+        }
+
+        .quick-actions {
+            display: flex;
+            gap: 1rem;
+            flex-wrap: wrap;
+        }
+
+        .btn-action {
+            padding: 0.6rem 1.2rem;
+            border: none;
+            border-radius: 5px;
+            font-weight: 600;
+            cursor: pointer;
+            font-size: 0.9rem;
+            transition: all 0.3s;
+        }
+
+        .btn-action-primary {
+            background: #0066cc;
+            color: white;
+        }
+
+        .btn-action-primary:hover {
+            background: #004499;
+        }
+
+        .btn-action-secondary {
+            background: #6c757d;
+            color: white;
+        }
+
+        .btn-action-secondary:hover {
+            background: #5a6268;
+        }
+
+        .main-content {
+            padding: 2rem 0;
+        }
+
+        .content-grid {
+            display: grid;
+            grid-template-columns: 2fr 1fr;
+            gap: 2rem;
+        }
+
+        .section-card {
+            background: white;
+            padding: 1.5rem;
+            border-radius: 8px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+            border: 1px solid #dee2e6;
+        }
+
+        .section-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 1.5rem;
+            padding-bottom: 1rem;
+            border-bottom: 2px solid #e9ecef;
+        }
+
+        .section-title {
+            color: #2c3e50;
+            font-size: 1.3rem;
+            font-weight: 700;
+            margin: 0;
+        }
+
+        .search-box {
+            display: flex;
+            gap: 0.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .search-input {
+            flex: 1;
+            padding: 0.6rem;
+            border: 1px solid #ced4da;
+            border-radius: 5px;
+            font-size: 0.9rem;
+        }
+
+        .search-btn {
+            padding: 0.6rem 1.2rem;
+            background: #0066cc;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-weight: 600;
+        }
+
+        .transaction-list {
+            display: flex;
+            flex-direction: column;
+            gap: 0.8rem;
+        }
+
+        .transaction-item {
+            display: grid;
+            grid-template-columns: 1fr auto auto;
+            gap: 1rem;
+            padding: 1rem;
+            background: #f8f9fa;
+            border-radius: 5px;
+            border-left: 4px solid #0066cc;
+            transition: all 0.2s;
+        }
+
+        .transaction-item:hover {
+            background: #e9ecef;
+        }
+
+        .transaction-item.highlighted {
+            background: #fff3cd;
+            border-left-color: #ffc107;
+        }
+
+        .transaction-details {
+            display: flex;
+            flex-direction: column;
+            gap: 0.3rem;
+        }
+
+        .transaction-date {
+            color: #666;
+            font-size: 0.85rem;
+            font-family: 'Courier New', monospace;
+        }
+
+        .transaction-description {
+            color: #2c3e50;
+            font-weight: 600;
+            font-size: 0.95rem;
+        }
+
+        .transaction-reference {
+            color: #999;
+            font-size: 0.8rem;
+            font-family: 'Courier New', monospace;
+        }
+
+        .transaction-amount {
+            font-size: 1.2rem;
+            font-weight: 700;
+            color: #0066cc;
+            text-align: right;
+        }
+
+        .transaction-status {
+            display: flex;
+            align-items: center;
+        }
+
+        .status-badge {
+            padding: 0.4rem 0.8rem;
+            border-radius: 20px;
+            font-size: 0.75rem;
+            font-weight: 600;
+            text-transform: uppercase;
+        }
+
+        .status-processed {
+            background: #d4edda;
+            color: #155724;
+        }
+
+        .status-pending {
+            background: #fff3cd;
+            color: #856404;
+        }
+
+        .info-grid {
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+        }
+
+        .info-item {
+            display: flex;
+            justify-content: space-between;
+            padding: 0.8rem;
+            background: #f8f9fa;
+            border-radius: 5px;
+            border-left: 3px solid #0066cc;
+        }
+
+        .info-label {
+            color: #666;
+            font-weight: 500;
+            font-size: 0.9rem;
+        }
+
+        .info-value {
+            color: #2c3e50;
+            font-weight: 600;
+            font-family: 'Courier New', monospace;
+        }
+
+        .security-section {
+            margin-top: 1.5rem;
+            padding-top: 1.5rem;
+            border-top: 2px solid #e9ecef;
+        }
+
+        .security-status-card {
+            padding: 1rem;
+            background: #d4edda;
+            border-radius: 5px;
+            border-left: 4px solid #28a745;
+            margin-bottom: 1rem;
+        }
+
+        .security-status-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 0.5rem;
+        }
+
+        .security-status-title {
+            font-weight: 700;
+            color: #155724;
+            font-size: 0.95rem;
+        }
+
+        .security-status-badge {
+            padding: 0.3rem 0.6rem;
+            background: #28a745;
+            color: white;
+            border-radius: 3px;
+            font-size: 0.75rem;
+            font-weight: 600;
+        }
+
+        .security-details {
+            color: #155724;
+            font-size: 0.85rem;
+            margin: 0;
+        }
+
+        .security-actions {
+            display: flex;
+            gap: 0.5rem;
+            margin-top: 1rem;
+        }
+
+        .btn-reset {
+            padding: 0.5rem 1rem;
+            background: #ffc107;
+            color: #856404;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-weight: 600;
+            font-size: 0.85rem;
+        }
+
+        .btn-reset:hover {
+            background: #e0a800;
+        }
+
+        .account-summary-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .account-summary-card {
+            padding: 1rem;
+            background: #f8f9fa;
+            border-radius: 5px;
+            border: 1px solid #dee2e6;
+        }
+
+        .account-summary-label {
+            color: #666;
+            font-size: 0.8rem;
+            text-transform: uppercase;
+            margin-bottom: 0.3rem;
+        }
+
+        .account-summary-number {
+            color: #2c3e50;
+            font-weight: 600;
+            font-family: 'Courier New', monospace;
+            font-size: 0.95rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .account-summary-balance {
+            color: #0066cc;
+            font-size: 1.5rem;
+            font-weight: 700;
+        }
+
+        .internal-footer {
+            background: #2c3e50;
+            color: #ccc;
+            padding: 1.5rem 0;
+            margin-top: 3rem;
+            border-top: 3px solid #0066cc;
+        }
+
+        .internal-footer-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 1rem;
+            font-size: 0.85rem;
+        }
+
+        @media (max-width: 768px) {
+            .content-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .customer-banner-content {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+
+            .account-summary-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Agent Header -->
+    <header class="agent-header">
+        <div class="container">
+            <div class="agent-header-content">
+                <div class="agent-info">
+                    <div class="agent-name">Agent: Greg</div>
+                    <div class="call-status">
+                        <span class="call-status-dot"></span>
+                        <span>Call Active</span>
+                    </div>
+                </div>
+                <nav class="nav">
+                    <a href="#" class="nav-link">Search Customer</a>
+                    <a href="#" class="nav-link">Transaction Lookup</a>
+                    <a href="#" class="nav-link">Token Management</a>
+                    <a href="index.html" class="nav-link">Exit Portal</a>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <!-- Customer Banner -->
+    <section class="customer-banner">
+        <div class="container">
+            <div class="customer-banner-content">
+                <div class="customer-primary-info">
+                    <div>
+                        <div class="customer-name">Jake Mills</div>
+                        <div class="customer-id">Account #885633789 | DOB: May 5, 1984</div>
+                    </div>
+                    <div class="verification-badge">
+                        ✓ Verified
+                    </div>
+                </div>
+                <div class="quick-actions">
+                    <button class="btn-action btn-action-primary">View All Accounts</button>
+                    <button class="btn-action btn-action-secondary">Transaction History</button>
+                    <button class="btn-action btn-action-secondary">Security Settings</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Main Content -->
+    <section class="main-content">
+        <div class="container">
+            <div class="content-grid">
+                <!-- Transaction Lookup -->
+                <div class="section-card">
+                    <div class="section-header">
+                        <h3 class="section-title">Transaction Lookup</h3>
+                    </div>
+                    <div class="search-box">
+                        <input type="text" class="search-input" placeholder="Search by amount, date, or reference..." value="$168 - March 21">
+                        <button class="search-btn">Search</button>
+                    </div>
+                    <div class="transaction-list">
+                        <div class="transaction-item highlighted">
+                            <div class="transaction-details">
+                                <div class="transaction-date">2024-03-21 14:32:15</div>
+                                <div class="transaction-description">Payment Transaction</div>
+                                <div class="transaction-reference">REF: TXN-20240321-168-885633789</div>
+                            </div>
+                            <div class="transaction-amount">-$168.00</div>
+                            <div class="transaction-status">
+                                <span class="status-badge status-processed">Processed</span>
+                            </div>
+                        </div>
+                        <div class="transaction-item">
+                            <div class="transaction-details">
+                                <div class="transaction-date">2024-03-19 08:15:42</div>
+                                <div class="transaction-description">Direct Deposit - Salary</div>
+                                <div class="transaction-reference">REF: DD-20240319-3500-885633789</div>
+                            </div>
+                            <div class="transaction-amount">+$3,500.00</div>
+                            <div class="transaction-status">
+                                <span class="status-badge status-processed">Processed</span>
+                            </div>
+                        </div>
+                        <div class="transaction-item">
+                            <div class="transaction-details">
+                                <div class="transaction-date">2024-03-18 16:22:08</div>
+                                <div class="transaction-description">Online Purchase</div>
+                                <div class="transaction-reference">REF: TXN-20240318-89-885633789</div>
+                            </div>
+                            <div class="transaction-amount">-$89.45</div>
+                            <div class="transaction-status">
+                                <span class="status-badge status-processed">Processed</span>
+                            </div>
+                        </div>
+                        <div class="transaction-item">
+                            <div class="transaction-details">
+                                <div class="transaction-date">2024-03-17 11:45:33</div>
+                                <div class="transaction-description">ATM Withdrawal</div>
+                                <div class="transaction-reference">REF: ATM-20240317-100-885633789</div>
+                            </div>
+                            <div class="transaction-amount">-$100.00</div>
+                            <div class="transaction-status">
+                                <span class="status-badge status-processed">Processed</span>
+                            </div>
+                        </div>
+                        <div class="transaction-item">
+                            <div class="transaction-details">
+                                <div class="transaction-date">2024-03-15 09:30:12</div>
+                                <div class="transaction-description">Transfer to Savings</div>
+                                <div class="transaction-reference">REF: XFR-20240315-500-885633789</div>
+                            </div>
+                            <div class="transaction-amount">-$500.00</div>
+                            <div class="transaction-status">
+                                <span class="status-badge status-processed">Processed</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Customer Information & Tools -->
+                <div>
+                    <!-- Account Summary -->
+                    <div class="section-card">
+                        <div class="section-header">
+                            <h3 class="section-title">Account Summary</h3>
+                        </div>
+                        <div class="account-summary-grid">
+                            <div class="account-summary-card">
+                                <div class="account-summary-label">Checking</div>
+                                <div class="account-summary-number">885633789</div>
+                                <div class="account-summary-balance">$12,456.78</div>
+                            </div>
+                            <div class="account-summary-card">
+                                <div class="account-summary-label">Savings</div>
+                                <div class="account-summary-number">885633790</div>
+                                <div class="account-summary-balance">$45,230.12</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Customer Information -->
+                    <div class="section-card">
+                        <div class="section-header">
+                            <h3 class="section-title">Customer Information</h3>
+                        </div>
+                        <div class="info-grid">
+                            <div class="info-item">
+                                <span class="info-label">Full Name</span>
+                                <span class="info-value">Jake Mills</span>
+                            </div>
+                            <div class="info-item">
+                                <span class="info-label">Account Number</span>
+                                <span class="info-value">885633789</span>
+                            </div>
+                            <div class="info-item">
+                                <span class="info-label">Date of Birth</span>
+                                <span class="info-value">1984-05-05</span>
+                            </div>
+                            <div class="info-item">
+                                <span class="info-label">Account Type</span>
+                                <span class="info-value">Personal Checking</span>
+                            </div>
+                            <div class="info-item">
+                                <span class="info-label">Member Since</span>
+                                <span class="info-value">2018-01-15</span>
+                            </div>
+                            <div class="info-item">
+                                <span class="info-label">Last Login</span>
+                                <span class="info-value">2024-03-21 15:42:18</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Security Token Management -->
+                    <div class="section-card">
+                        <div class="section-header">
+                            <h3 class="section-title">Security Token</h3>
+                        </div>
+                        <div class="security-section">
+                            <div class="security-status-card">
+                                <div class="security-status-header">
+                                    <div class="security-status-title">Token Status</div>
+                                    <span class="security-status-badge">Active</span>
+                                </div>
+                                <p class="security-details">
+                                    Device synchronized. Last reset: 2024-03-21 14:45:22<br>
+                                    Previous error: ERR503 (resolved)
+                                </p>
+                            </div>
+                            <div class="security-actions">
+                                <button class="btn-reset">Reset Token</button>
+                                <button class="btn-action btn-action-secondary" style="padding: 0.5rem 1rem; font-size: 0.85rem;">View Token History</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Internal Footer -->
+    <footer class="internal-footer">
+        <div class="container">
+            <div class="internal-footer-content">
+                <div>
+                    <strong>Ocean Bank Agent Portal</strong> | Internal Use Only | Version 2.4.1
+                </div>
+                <div>
+                    Session ID: AGT-2024-0321-1423 | Last Updated: 2024-03-21 15:42:18 EST
+                </div>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>
