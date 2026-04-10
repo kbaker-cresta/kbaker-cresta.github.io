@@ -429,6 +429,107 @@
         }
 
         /* ── Substitution View Styles ── */
+
+        /* Substitute option cards */
+        .sub-options-grid {
+            display: flex;
+            flex-direction: column;
+            gap: 14px;
+            flex: 1;
+        }
+        .sub-option-card {
+            border: 2px solid var(--border);
+            border-radius: var(--radius-lg);
+            padding: 18px 20px;
+            cursor: pointer;
+            transition: all 0.2s ease;
+            background: white;
+            position: relative;
+        }
+        .sub-option-card:hover {
+            border-color: var(--primary-light);
+            background: #f8faff;
+            transform: translateY(-1px);
+            box-shadow: 0 4px 12px rgba(37,99,235,0.08);
+        }
+        .sub-option-card.selected {
+            border-color: var(--primary);
+            background: #f0f7ff;
+            box-shadow: 0 4px 16px rgba(37,99,235,0.15);
+        }
+        .sub-option-card .option-radio {
+            position: absolute;
+            top: 16px;
+            right: 16px;
+            width: 20px;
+            height: 20px;
+            border: 2px solid var(--border);
+            border-radius: 50%;
+            background: white;
+            transition: all 0.2s;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .sub-option-card.selected .option-radio {
+            border-color: var(--primary);
+            background: var(--primary);
+        }
+        .sub-option-card.selected .option-radio::after {
+            content: '';
+            width: 8px;
+            height: 8px;
+            border-radius: 50%;
+            background: white;
+        }
+        .option-recommended-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 5px;
+            background: linear-gradient(135deg, #dcfce7, #d1fae5);
+            color: #166534;
+            border: 1px solid #bbf7d0;
+            border-radius: 20px;
+            padding: 3px 10px;
+            font-size: 11px;
+            font-weight: 700;
+            margin-bottom: 10px;
+            text-transform: uppercase;
+            letter-spacing: 0.4px;
+        }
+        .sub-option-name {
+            font-size: 15px;
+            font-weight: 700;
+            color: var(--text);
+            margin-bottom: 6px;
+            padding-right: 30px;
+        }
+        .sub-option-features {
+            list-style: none;
+            padding: 0;
+            margin: 8px 0 0;
+            display: flex;
+            flex-direction: column;
+            gap: 5px;
+        }
+        .sub-option-features li {
+            font-size: 12.5px;
+            color: var(--text-muted);
+            display: flex;
+            align-items: flex-start;
+            gap: 8px;
+            line-height: 1.5;
+        }
+        .sub-option-features li::before {
+            content: '•';
+            color: var(--primary);
+            font-weight: 700;
+            flex-shrink: 0;
+            margin-top: 1px;
+        }
+        .sub-option-card.selected .sub-option-features li::before {
+            color: var(--primary);
+        }
         .sub-page-alert {
             background: linear-gradient(135deg, #ebf8ff 0%, #e6f6ff 100%);
             border: 1px solid #bee3f8;
@@ -1032,8 +1133,8 @@
             <div class="sub-page-alert">
                 <i class="fa-solid fa-circle-info"></i>
                 <div class="sub-page-alert-text">
-                    <strong>1 substitution opportunity detected</strong>
-                    <p>SKU <strong>EMB-C200</strong> (Embolization Coils 200mm) is currently backordered. A clinically comparable substitute is available for immediate fulfillment.</p>
+                    <strong>3 substitute options available</strong>
+                    <p>SKU <strong>EMB-C200</strong> (Embolization Coils 200mm) is currently backordered. Select a clinically comparable Boston Scientific substitute below for immediate fulfillment.</p>
                 </div>
             </div>
 
@@ -1080,45 +1181,43 @@
                     </div>
                 </div>
 
-                <!-- Substitute Item -->
-                <div class="compare-card">
-                    <div class="compare-card-header substitute">
-                        <i class="fa-solid fa-circle-check"></i> Recommended Substitute
+                <!-- Substitute Options -->
+                <div class="sub-options-grid">
+
+                    <!-- Option 1: Interlock Fibered IDC -->
+                    <div class="sub-option-card selected" id="sub-opt-1" onclick="selectSubOption(1)">
+                        <div class="option-radio"></div>
+                        <div class="option-recommended-badge"><i class="fa-solid fa-star"></i> Recommended</div>
+                        <div class="sub-option-name">Interlock™ Fibered IDC™ Occlusion System</div>
+                        <ul class="sub-option-features">
+                            <li>Fibered platinum coil with mechanical detachment</li>
+                            <li>Available in 2D helical and diamond shapes for secure anchoring</li>
+                            <li>Designed for controlled deployment and vascular occlusion</li>
+                        </ul>
                     </div>
-                    <div class="compare-card-body">
-                        <div class="compare-row">
-                            <span class="compare-row-label">SKU</span>
-                            <span class="compare-row-value">EMB-C200-PRO</span>
-                        </div>
-                        <div class="compare-row">
-                            <span class="compare-row-label">Description</span>
-                            <span class="compare-row-value">Embolization Coils PRO (200mm)</span>
-                        </div>
-                        <div class="compare-row">
-                            <span class="compare-row-label">Unit Price</span>
-                            <span class="compare-row-value" style="color: var(--warning);">$1,625.00 <span style="font-size:11px; font-weight:400;">+$125</span></span>
-                        </div>
-                        <div class="compare-row">
-                            <span class="compare-row-label">Qty Available</span>
-                            <span class="compare-row-value">6 units @ Local Hub</span>
-                        </div>
-                        <div class="compare-row">
-                            <span class="compare-row-label">Stock Status</span>
-                            <span class="availability-badge avail-good"><i class="fa-solid fa-check"></i> In Stock</span>
-                        </div>
-                        <div class="compare-row">
-                            <span class="compare-row-label">Delivery Option</span>
-                            <span class="compare-row-value" style="color: var(--success);">Same-Day Courier</span>
-                        </div>
-                        <div class="compare-row">
-                            <span class="compare-row-label">Clinical Category</span>
-                            <span class="compare-row-value">Interventional / Cardiology</span>
-                        </div>
-                        <div class="compare-row">
-                            <span class="compare-row-label">Regulatory Class</span>
-                            <span class="compare-row-value">FDA Class II</span>
-                        </div>
+
+                    <!-- Option 2: Interlock-35 Fibered IDC -->
+                    <div class="sub-option-card" id="sub-opt-2" onclick="selectSubOption(2)">
+                        <div class="option-radio"></div>
+                        <div class="sub-option-name">Interlock™-35 Fibered IDC™</div>
+                        <ul class="sub-option-features">
+                            <li>Large-volume system for proximal vessels</li>
+                            <li>Optimized for rapid thrombosis</li>
+                            <li>Ideal for high-flow or larger vessel cases</li>
+                        </ul>
                     </div>
+
+                    <!-- Option 3: IDC-18 -->
+                    <div class="sub-option-card" id="sub-opt-3" onclick="selectSubOption(3)">
+                        <div class="option-radio"></div>
+                        <div class="sub-option-name">IDC-18 Soft Interlocking Detachable Coil</div>
+                        <ul class="sub-option-features">
+                            <li>Softer, thinner coil design</li>
+                            <li>Enables tight packing and precise finishing</li>
+                            <li>Commonly used for smaller or more delicate anatomy</li>
+                        </ul>
+                    </div>
+
                 </div>
             </div>
 
@@ -1387,11 +1486,26 @@
             document.querySelector('.main-content').scrollTop = 0;
         }
 
+        var selectedSubOption = 1;
+        var subOptionNames = {
+            1: 'Interlock™ Fibered IDC™ Occlusion System',
+            2: 'Interlock™-35 Fibered IDC™',
+            3: 'IDC-18 Soft Interlocking Detachable Coil'
+        };
+
+        function selectSubOption(num) {
+            selectedSubOption = num;
+            [1,2,3].forEach(function(n) {
+                document.getElementById('sub-opt-' + n).classList.toggle('selected', n === num);
+            });
+        }
+
         function applySubstitute() {
             switchView('view-case');
             const notes = document.getElementById('case-notes');
+            const subName = subOptionNames[selectedSubOption] || 'Selected Substitute';
             if (notes) {
-                notes.value = 'Substitute EMB-C200-PRO approved and applied to Order #OM-90211 (PO 784331). Same-day courier delivery confirmed from Minneapolis Distribution Center. Proactive billing review required — $250.00 pricing variance (Qty 2 × +$125.00/unit). Customer notified of fulfillment timeline.';
+                notes.value = 'Substitute "' + subName + '" approved and applied to Order #OM-90211 (PO 784331). Same-day courier delivery confirmed from Minneapolis Distribution Center. Proactive billing review required — $250.00 pricing variance (Qty 2 × +$125.00/unit). Customer notified of fulfillment timeline.';
             }
         }
 
