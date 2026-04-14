@@ -1138,6 +1138,10 @@
                 <i class="fa-solid fa-arrows-rotate"></i> Substitutions
                 <span class="sub-nav-badge">1</span>
             </div>
+            <div class="nav-item" onclick="switchView('view-invoices')">
+                <i class="fa-solid fa-file-invoice-dollar"></i> Past Due Invoices
+                <span class="sub-nav-badge">3</span>
+            </div>
             <div class="nav-item">
                 <i class="fa-solid fa-users"></i> Accounts
             </div>
@@ -1628,9 +1632,233 @@
 
             <p class="demo-tip"><em>Demo tip:</em> Click <strong>Submit Case</strong> to show the success message strip and case reference.</p>
         </div>
+
+        <!-- VIEW 5: Past Due Invoices -->
+        <div id="view-invoices" class="view-container">
+
+            <div class="page-header">
+                <div>
+                    <h1 class="page-title">Past Due Invoices</h1>
+                    <p class="page-subtitle">Account: <strong>Northside Heart Institute</strong> &mdash; 3 invoices requiring attention</p>
+                </div>
+                <div style="display:flex; gap:10px; align-items:center;">
+                    <span class="badge badge-danger" style="font-size:13px; padding:6px 14px;"><i class="fa-solid fa-triangle-exclamation"></i> $81,050 Total Outstanding</span>
+                    <button class="btn btn-outline"><i class="fa-solid fa-arrow-down-to-line"></i> Export</button>
+                </div>
+            </div>
+
+            <!-- Summary stat row -->
+            <div style="display:grid; grid-template-columns: repeat(4,1fr); gap:16px; margin-bottom:28px;">
+                <div class="stat-card" style="border-left-color:var(--danger);">
+                    <div class="stat-label">Total Outstanding</div>
+                    <div class="stat-value" style="font-size:22px;">$81,050</div>
+                </div>
+                <div class="stat-card" style="border-left-color:#c05621;">
+                    <div class="stat-label">Oldest Invoice</div>
+                    <div class="stat-value" style="font-size:22px;">75 Days</div>
+                </div>
+                <div class="stat-card" style="border-left-color:var(--warning);">
+                    <div class="stat-label">Invoices Past Due</div>
+                    <div class="stat-value" style="font-size:22px;">3</div>
+                </div>
+                <div class="stat-card" style="border-left-color:var(--primary);">
+                    <div class="stat-label">Account Terms</div>
+                    <div class="stat-value" style="font-size:22px;">Net 30</div>
+                </div>
+            </div>
+
+            <!-- ── INVOICE 1 ── -->
+            <div class="card" style="margin-bottom:24px; border-left:5px solid #dd6b20;">
+                <div class="card-header" style="background:#fffaf0;">
+                    <div style="display:flex; align-items:center; gap:12px;">
+                        <i class="fa-solid fa-file-invoice-dollar" style="color:#dd6b20; font-size:18px;"></i>
+                        <div>
+                            <div style="font-weight:700; font-size:15px;">INV-10482</div>
+                            <div style="font-size:12px; color:var(--text-muted); font-weight:400;">PO #PO-77821 &nbsp;|&nbsp; Terms: Net 30</div>
+                        </div>
+                    </div>
+                    <div style="display:flex; align-items:center; gap:12px;">
+                        <span class="badge badge-warning"><i class="fa-solid fa-clock"></i> 45 Days Past Due</span>
+                        <span style="font-weight:700; font-size:17px;">$18,750.00</span>
+                        <button class="btn btn-outline" style="padding:6px 14px; font-size:13px;"><i class="fa-solid fa-envelope"></i> Send Reminder</button>
+                        <button class="btn btn-primary" style="padding:6px 14px; font-size:13px;" onclick="switchView('view-case')"><i class="fa-solid fa-headset"></i> Create Case</button>
+                    </div>
+                </div>
+                <div class="card-body" style="padding:0;">
+                    <table class="table">
+                        <thead>
+                            <tr>
+                                <th>Item</th>
+                                <th>Description</th>
+                                <th style="text-align:right;">Qty</th>
+                                <th style="text-align:right;">Unit Price</th>
+                                <th style="text-align:right;">Amount</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td><code style="background:#f0f0f0; padding:2px 6px; border-radius:4px; font-size:12px;">EMB-C200</code></td>
+                                <td><strong>Interlock&trade; Detachable Embolization Coils</strong><br><span style="font-size:12px; color:var(--text-muted);">200mm standard gauge</span></td>
+                                <td style="text-align:right;">6</td>
+                                <td style="text-align:right;">$2,500.00</td>
+                                <td style="text-align:right; font-weight:600;">$15,000.00</td>
+                            </tr>
+                            <tr>
+                                <td><code style="background:#f0f0f0; padding:2px 6px; border-radius:4px; font-size:12px;">ACC-MICRO</code></td>
+                                <td>Microcatheter Accessories</td>
+                                <td style="text-align:right;">1</td>
+                                <td style="text-align:right;">$1,750.00</td>
+                                <td style="text-align:right; font-weight:600;">$1,750.00</td>
+                            </tr>
+                            <tr>
+                                <td><code style="background:#f0f0f0; padding:2px 6px; border-radius:4px; font-size:12px;">SVC-SH</code></td>
+                                <td>Shipping &amp; Handling</td>
+                                <td style="text-align:right;">1</td>
+                                <td style="text-align:right;">$2,000.00</td>
+                                <td style="text-align:right; font-weight:600;">$2,000.00</td>
+                            </tr>
+                        </tbody>
+                        <tfoot>
+                            <tr style="background:#fafafa;">
+                                <td colspan="4" style="text-align:right; font-weight:700; padding:14px 20px;">Invoice Total</td>
+                                <td style="text-align:right; font-weight:700; font-size:15px; padding:14px 20px;">$18,750.00</td>
+                            </tr>
+                        </tfoot>
+                    </table>
+                </div>
+            </div>
+
+            <!-- ── INVOICE 2 ── -->
+            <div class="card" style="margin-bottom:24px; border-left:5px solid #c53030;">
+                <div class="card-header" style="background:#fff5f5;">
+                    <div style="display:flex; align-items:center; gap:12px;">
+                        <i class="fa-solid fa-file-invoice-dollar" style="color:#c53030; font-size:18px;"></i>
+                        <div>
+                            <div style="font-weight:700; font-size:15px;">INV-10567</div>
+                            <div style="font-size:12px; color:var(--text-muted); font-weight:400;">PO #PO-78114 &nbsp;|&nbsp; Terms: Net 30</div>
+                        </div>
+                    </div>
+                    <div style="display:flex; align-items:center; gap:12px;">
+                        <span class="badge badge-danger"><i class="fa-solid fa-triangle-exclamation"></i> 60 Days Past Due</span>
+                        <span style="font-weight:700; font-size:17px;">$27,900.00</span>
+                        <button class="btn btn-outline" style="padding:6px 14px; font-size:13px;"><i class="fa-solid fa-envelope"></i> Send Reminder</button>
+                        <button class="btn btn-primary" style="padding:6px 14px; font-size:13px;" onclick="switchView('view-case')"><i class="fa-solid fa-headset"></i> Create Case</button>
+                    </div>
+                </div>
+                <div class="card-body" style="padding:0;">
+                    <table class="table">
+                        <thead>
+                            <tr>
+                                <th>Item</th>
+                                <th>Description</th>
+                                <th style="text-align:right;">Qty</th>
+                                <th style="text-align:right;">Unit Price</th>
+                                <th style="text-align:right;">Amount</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td><code style="background:#f0f0f0; padding:2px 6px; border-radius:4px; font-size:12px;">IDC-10</code></td>
+                                <td><strong>IDC&trade; Interlocking Detachable Coils</strong><br><span style="font-size:12px; color:var(--text-muted);">Standard interlocking system</span></td>
+                                <td style="text-align:right;">10</td>
+                                <td style="text-align:right;">$2,300.00</td>
+                                <td style="text-align:right; font-weight:600;">$23,000.00</td>
+                            </tr>
+                            <tr>
+                                <td><code style="background:#f0f0f0; padding:2px 6px; border-radius:4px; font-size:12px;">SVC-DL</code></td>
+                                <td>Delivery &amp; Logistics</td>
+                                <td style="text-align:right;">1</td>
+                                <td style="text-align:right;">$2,900.00</td>
+                                <td style="text-align:right; font-weight:600;">$2,900.00</td>
+                            </tr>
+                            <tr>
+                                <td><code style="background:#f0f0f0; padding:2px 6px; border-radius:4px; font-size:12px;">SVC-PKG</code></td>
+                                <td>Sterile Packaging &amp; Handling</td>
+                                <td style="text-align:right;">1</td>
+                                <td style="text-align:right;">$2,000.00</td>
+                                <td style="text-align:right; font-weight:600;">$2,000.00</td>
+                            </tr>
+                        </tbody>
+                        <tfoot>
+                            <tr style="background:#fafafa;">
+                                <td colspan="4" style="text-align:right; font-weight:700; padding:14px 20px;">Invoice Total</td>
+                                <td style="text-align:right; font-weight:700; font-size:15px; padding:14px 20px;">$27,900.00</td>
+                            </tr>
+                        </tfoot>
+                    </table>
+                </div>
+            </div>
+
+            <!-- ── INVOICE 3 ── -->
+            <div class="card" style="margin-bottom:24px; border-left:5px solid #742a2a;">
+                <div class="card-header" style="background:#fff5f5;">
+                    <div style="display:flex; align-items:center; gap:12px;">
+                        <i class="fa-solid fa-file-invoice-dollar" style="color:#742a2a; font-size:18px;"></i>
+                        <div>
+                            <div style="font-weight:700; font-size:15px;">INV-10602</div>
+                            <div style="font-size:12px; color:var(--text-muted); font-weight:400;">PO #PO-78455 &nbsp;|&nbsp; Terms: Net 30</div>
+                        </div>
+                    </div>
+                    <div style="display:flex; align-items:center; gap:12px;">
+                        <span class="badge badge-danger" style="border-color:#742a2a; color:#742a2a;"><i class="fa-solid fa-fire"></i> 75 Days Past Due</span>
+                        <span style="font-weight:700; font-size:17px;">$34,400.00</span>
+                        <button class="btn btn-outline" style="padding:6px 14px; font-size:13px;"><i class="fa-solid fa-envelope"></i> Send Reminder</button>
+                        <button class="btn btn-danger" style="padding:6px 14px; font-size:13px;" onclick="switchView('view-case')"><i class="fa-solid fa-headset"></i> Escalate Now</button>
+                    </div>
+                </div>
+                <div class="card-body" style="padding:0;">
+                    <div style="background:linear-gradient(135deg,#fff5f5,#ffe8e8); border-bottom:1px solid #fed7d7; padding:12px 20px; font-size:13px; color:#742a2a; display:flex; align-items:center; gap:10px;">
+                        <i class="fa-solid fa-fire"></i>
+                        <strong>Critical — 75 days overdue.</strong>&nbsp; This invoice is past the standard collections threshold. Immediate escalation recommended to avoid write-off risk.
+                    </div>
+                    <table class="table">
+                        <thead>
+                            <tr>
+                                <th>Item</th>
+                                <th>Description</th>
+                                <th style="text-align:right;">Qty</th>
+                                <th style="text-align:right;">Unit Price</th>
+                                <th style="text-align:right;">Amount</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td><code style="background:#f0f0f0; padding:2px 6px; border-radius:4px; font-size:12px;">IDC-35F</code></td>
+                                <td><strong>Interlock&trade;-35 Fibered IDC&trade; System</strong><br><span style="font-size:12px; color:var(--text-muted);">35mm fibered occlusion system</span></td>
+                                <td style="text-align:right;">8</td>
+                                <td style="text-align:right;">$3,800.00</td>
+                                <td style="text-align:right; font-weight:600;">$30,400.00</td>
+                            </tr>
+                            <tr>
+                                <td><code style="background:#f0f0f0; padding:2px 6px; border-radius:4px; font-size:12px;">SVC-PC</code></td>
+                                <td>Priority Courier Delivery</td>
+                                <td style="text-align:right;">1</td>
+                                <td style="text-align:right;">$2,500.00</td>
+                                <td style="text-align:right; font-weight:600;">$2,500.00</td>
+                            </tr>
+                            <tr>
+                                <td><code style="background:#f0f0f0; padding:2px 6px; border-radius:4px; font-size:12px;">SVC-CSM</code></td>
+                                <td>Clinical Support Materials</td>
+                                <td style="text-align:right;">1</td>
+                                <td style="text-align:right;">$1,500.00</td>
+                                <td style="text-align:right; font-weight:600;">$1,500.00</td>
+                            </tr>
+                        </tbody>
+                        <tfoot>
+                            <tr style="background:#fafafa;">
+                                <td colspan="4" style="text-align:right; font-weight:700; padding:14px 20px;">Invoice Total</td>
+                                <td style="text-align:right; font-weight:700; font-size:15px; padding:14px 20px;">$34,400.00</td>
+                            </tr>
+                        </tfoot>
+                    </table>
+                </div>
+            </div>
+
+            <p style="color: var(--text-muted); text-align: center; margin-top: 40px;">
+                💡 <em>Demo Tip: Click "Create Case" or "Escalate Now" on any invoice to open the escalation case form.</em>
+            </p>
+        </div>
     </div>
-    </div>
-</div>
 
     <!-- Application Logic -->
     <script>
@@ -1648,6 +1876,7 @@
             if(viewId === 'view-order') document.querySelectorAll('.nav-item')[1].classList.add('active');
             if(viewId === 'view-case') document.querySelectorAll('.nav-item')[2].classList.add('active');
             if(viewId === 'view-substitutions') document.querySelectorAll('.nav-item')[3].classList.add('active');
+            if(viewId === 'view-invoices') document.querySelectorAll('.nav-item')[4].classList.add('active');
             
             // Re-hide success banner if moving away from case
             if(viewId !== 'view-case') {
