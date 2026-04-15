@@ -43,7 +43,7 @@
         <a class="nav-item" href="orders.html"><i class="fa-solid fa-box-open"></i> Orders</a>
         <a class="nav-item" href="cases.html"><i class="fa-solid fa-headset"></i> Support Cases</a>
         <a class="nav-item" href="substitutions.html"><i class="fa-solid fa-arrows-rotate"></i> Substitutions <span class="sub-nav-badge">1</span></a>
-        <a class="nav-item active" href="invoices.html"><i class="fa-solid fa-file-invoice-dollar"></i> Past Due Invoices <span class="sub-nav-badge">3</span></a>
+        <a class="nav-item active" href="invoices.html"><i class="fa-solid fa-file-invoice-dollar"></i> Past Due Invoices <span class="sub-nav-badge">4</span></a>
         <a class="nav-item" href="accounts.html"><i class="fa-solid fa-users"></i> Accounts</a>
       </div>
     </nav>
@@ -62,7 +62,7 @@
         <div class="dashboard-stats">
           <div class="stat-card" style="border-left-color:var(--danger);">
             <div class="stat-label">Total past due</div>
-            <div class="stat-value">$182K</div>
+            <div class="stat-value">$204K</div>
           </div>
           <div class="stat-card" style="border-left-color:var(--warning);">
             <div class="stat-label">Accounts &gt; 60 days</div>
@@ -77,7 +77,7 @@
         <div class="card">
           <div class="card-header">
             Open invoices
-            <span class="badge badge-danger"><i class="fa-solid fa-triangle-exclamation"></i> 3 past due</span>
+            <span class="badge badge-danger"><i class="fa-solid fa-triangle-exclamation"></i> 4 past due</span>
           </div>
           <table class="table">
             <thead>
@@ -100,6 +100,14 @@
                 <td><a class="btn btn-primary" style="padding:6px 12px;" href="accounts.html">Account</a></td>
               </tr>
               <tr>
+                <td><strong>INV-10482</strong></td>
+                <td>Northside Heart Institute – Cath Lab</td>
+                <td>Mar 18, 2026</td>
+                <td><span class="badge badge-warning">20</span></td>
+                <td>$22,100</td>
+                <td><a class="btn btn-outline" style="padding:6px 12px;" href="#inv-10482">Details</a></td>
+              </tr>
+              <tr>
                 <td>INV-10588</td>
                 <td>Pacific Regional Medical</td>
                 <td>Feb 10, 2026</td>
@@ -117,6 +125,28 @@
               </tr>
             </tbody>
           </table>
+        </div>
+
+        <div class="card" id="inv-10482">
+          <div class="card-header">
+            Invoice INV-10482 — linked order
+            <span class="badge badge-warning"><i class="fa-solid fa-clock"></i> Past due</span>
+          </div>
+          <div class="card-body">
+            <table class="table" style="margin:0;">
+              <tbody>
+                <tr><td style="width:12rem;color:var(--sapContent_LabelColor);font-size:0.875rem;">Invoice #</td><td><strong>INV-10482</strong></td></tr>
+                <tr><td style="color:var(--sapContent_LabelColor);font-size:0.875rem;">Order #</td><td><strong>OM-90211</strong></td></tr>
+                <tr><td style="color:var(--sapContent_LabelColor);font-size:0.875rem;">Customer / facility</td><td>Northside Heart Institute – Cath Lab</td></tr>
+                <tr><td style="color:var(--sapContent_LabelColor);font-size:0.875rem;">Account ID</td><td>NSH-00412</td></tr>
+                <tr><td style="color:var(--sapContent_LabelColor);font-size:0.875rem;">Order date</td><td>Apr 5, 2026</td></tr>
+                <tr><td style="color:var(--sapContent_LabelColor);font-size:0.875rem;">Requested delivery</td><td>Apr 7, 2026 (today)</td></tr>
+                <tr><td style="color:var(--sapContent_LabelColor);font-size:0.875rem;">Order status</td><td>Partially allocated — delayed due to backorder</td></tr>
+                <tr><td style="color:var(--sapContent_LabelColor);font-size:0.875rem;">Shipping method</td><td>Priority overnight — Boston Scientific preferred carrier</td></tr>
+                <tr><td style="vertical-align:top;color:var(--sapContent_LabelColor);font-size:0.875rem;">Ship-to address</td><td>Northside Heart Institute, 1200 Medical Center Drive, Boston, MA 02115</td></tr>
+              </tbody>
+            </table>
+          </div>
         </div>
 
       </div>
