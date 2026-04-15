@@ -8,3 +8,19 @@ function handleSearch(event) {
     }
   }
 }
+
+document.addEventListener('DOMContentLoaded', function () {
+  var menuBtn = document.querySelector('.sap-shell-menu-btn');
+  var sidebar = document.querySelector('.sidebar');
+  if (!menuBtn || !sidebar) return;
+
+  menuBtn.addEventListener('click', function () {
+    sidebar.classList.toggle('sidebar--collapsed');
+    var collapsed = sidebar.classList.contains('sidebar--collapsed');
+    menuBtn.setAttribute('aria-expanded', collapsed ? 'false' : 'true');
+    menuBtn.setAttribute('aria-label', collapsed ? 'Expand navigation' : 'Collapse navigation');
+  });
+
+  menuBtn.setAttribute('aria-expanded', 'false');
+  menuBtn.setAttribute('aria-label', 'Expand navigation');
+});

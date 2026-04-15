@@ -36,15 +36,15 @@
   </header>
 
   <div class="sap-shell-body">
-    <nav class="sidebar">
+    <nav class="sidebar sidebar--collapsed" aria-label="Main navigation">
       <div class="brand">Navigation</div>
       <div class="nav-items">
-        <a class="nav-item" href="index.html"><i class="fa-solid fa-chart-pie"></i> Dashboard</a>
-        <a class="nav-item" href="orders.html"><i class="fa-solid fa-box-open"></i> Orders</a>
-        <a class="nav-item" href="cases.html"><i class="fa-solid fa-headset"></i> Support Cases</a>
-        <a class="nav-item" href="substitutions.html"><i class="fa-solid fa-arrows-rotate"></i> Substitutions <span class="sub-nav-badge">1</span></a>
-        <a class="nav-item active" href="invoices.html"><i class="fa-solid fa-file-invoice-dollar"></i> Past Due Invoices <span class="sub-nav-badge">4</span></a>
-        <a class="nav-item" href="accounts.html"><i class="fa-solid fa-users"></i> Accounts</a>
+        <a class="nav-item" href="index.html" title="Dashboard"><i class="fa-solid fa-chart-pie"></i> Dashboard</a>
+        <a class="nav-item" href="orders.html" title="Orders"><i class="fa-solid fa-box-open"></i> Orders</a>
+        <a class="nav-item" href="cases.html" title="Support Cases"><i class="fa-solid fa-headset"></i> Support Cases</a>
+        <a class="nav-item" href="substitutions.html" title="Substitutions"><i class="fa-solid fa-arrows-rotate"></i> Substitutions <span class="sub-nav-badge">1</span></a>
+        <a class="nav-item active" href="invoices.html" title="Past Due Invoices"><i class="fa-solid fa-file-invoice-dollar"></i> Past Due Invoices <span class="sub-nav-badge">3</span></a>
+        <a class="nav-item" href="accounts.html" title="Accounts"><i class="fa-solid fa-users"></i> Accounts</a>
       </div>
     </nav>
 
@@ -62,11 +62,11 @@
         <div class="dashboard-stats">
           <div class="stat-card" style="border-left-color:var(--danger);">
             <div class="stat-label">Total past due</div>
-            <div class="stat-value">$204K</div>
+            <div class="stat-value">$81K</div>
           </div>
           <div class="stat-card" style="border-left-color:var(--warning);">
             <div class="stat-label">Accounts &gt; 60 days</div>
-            <div class="stat-value">3</div>
+            <div class="stat-value">2</div>
           </div>
           <div class="stat-card">
             <div class="stat-label">Collected (MTD)</div>
@@ -77,7 +77,7 @@
         <div class="card">
           <div class="card-header">
             Open invoices
-            <span class="badge badge-danger"><i class="fa-solid fa-triangle-exclamation"></i> 4 past due</span>
+            <span class="badge badge-danger"><i class="fa-solid fa-triangle-exclamation"></i> 3 past due</span>
           </div>
           <table class="table">
             <thead>
@@ -96,37 +96,28 @@
                 <td><strong>INV-10602</strong></td>
                 <td>Northside Heart Institute</td>
                 <td>Net 30</td>
-                <td>Jan 2, 2026</td>
+                <td>Jan 30, 2026</td>
                 <td><span class="badge badge-danger">75 days</span></td>
                 <td>$34,400</td>
-                <td><a class="btn btn-primary" style="padding:6px 12px;" href="accounts.html">Account</a></td>
+                <td><a class="btn btn-outline" style="padding:6px 12px;" href="#inv-10602">Details</a></td>
+              </tr>
+              <tr>
+                <td><strong>INV-10567</strong></td>
+                <td>Revenue recovery</td>
+                <td>Net 30</td>
+                <td>Feb 13, 2026</td>
+                <td><span class="badge badge-warning">60 days</span></td>
+                <td>$27,900</td>
+                <td><a class="btn btn-outline" style="padding:6px 12px;" href="#inv-10567">Details</a></td>
               </tr>
               <tr>
                 <td><strong>INV-10482</strong></td>
-                <td>Northside Heart Institute – Cath Lab</td>
-                <td>Net 30</td>
-                <td>Mar 18, 2026</td>
-                <td><span class="badge badge-warning">20 days</span></td>
-                <td>$22,100</td>
-                <td><a class="btn btn-outline" style="padding:6px 12px;" href="#inv-10482">Details</a></td>
-              </tr>
-              <tr>
-                <td>INV-10588</td>
-                <td>Pacific Regional Medical</td>
-                <td>Net 45</td>
-                <td>Feb 10, 2026</td>
-                <td><span class="badge badge-warning">45 days</span></td>
-                <td>$12,900</td>
-                <td><button type="button" class="btn btn-outline" style="padding:6px 12px;">View</button></td>
-              </tr>
-              <tr>
-                <td>INV-10571</td>
-                <td>Harborview Clinic Network</td>
+                <td>Northside Heart Institute</td>
                 <td>Net 30</td>
                 <td>Feb 28, 2026</td>
-                <td><span class="badge badge-warning">28 days</span></td>
-                <td>$8,200</td>
-                <td><button type="button" class="btn btn-outline" style="padding:6px 12px;">View</button></td>
+                <td><span class="badge badge-warning">45 days</span></td>
+                <td>$18,750</td>
+                <td><a class="btn btn-outline" style="padding:6px 12px;" href="#inv-10482">Details</a></td>
               </tr>
             </tbody>
           </table>
@@ -134,24 +125,100 @@
 
         <div class="card" id="inv-10482">
           <div class="card-header">
-            Invoice INV-10482 — linked order
-            <span class="badge badge-warning"><i class="fa-solid fa-clock"></i> Past due</span>
+            Invoice INV-10482 (original)
+            <span class="badge badge-warning"><i class="fa-solid fa-clock"></i> 45 days past due</span>
           </div>
           <div class="card-body">
-            <table class="table" style="margin:0;">
+            <table class="table" style="margin:0 0 1rem 0;">
               <tbody>
                 <tr><td style="width:12rem;color:var(--sapContent_LabelColor);font-size:0.875rem;">Invoice #</td><td><strong>INV-10482</strong></td></tr>
-                <tr><td style="color:var(--sapContent_LabelColor);font-size:0.875rem;">Net terms</td><td>Net 30</td></tr>
-                <tr><td style="color:var(--sapContent_LabelColor);font-size:0.875rem;">Due date</td><td>Mar 18, 2026</td></tr>
-                <tr><td style="color:var(--sapContent_LabelColor);font-size:0.875rem;">Days past due</td><td>20 days</td></tr>
-                <tr><td style="color:var(--sapContent_LabelColor);font-size:0.875rem;">Order #</td><td><strong>OM-90211</strong></td></tr>
-                <tr><td style="color:var(--sapContent_LabelColor);font-size:0.875rem;">Customer / facility</td><td>Northside Heart Institute – Cath Lab</td></tr>
-                <tr><td style="color:var(--sapContent_LabelColor);font-size:0.875rem;">Account ID</td><td>NSH-00412</td></tr>
-                <tr><td style="color:var(--sapContent_LabelColor);font-size:0.875rem;">Order date</td><td>Apr 5, 2026</td></tr>
-                <tr><td style="color:var(--sapContent_LabelColor);font-size:0.875rem;">Requested delivery</td><td>Apr 7, 2026 (today)</td></tr>
-                <tr><td style="color:var(--sapContent_LabelColor);font-size:0.875rem;">Order status</td><td>Partially allocated — delayed due to backorder</td></tr>
-                <tr><td style="color:var(--sapContent_LabelColor);font-size:0.875rem;">Shipping method</td><td>Priority overnight — Boston Scientific preferred carrier</td></tr>
-                <tr><td style="vertical-align:top;color:var(--sapContent_LabelColor);font-size:0.875rem;">Ship-to address</td><td>Northside Heart Institute, 1200 Medical Center Drive, Boston, MA 02115</td></tr>
+                <tr><td style="color:var(--sapContent_LabelColor);font-size:0.875rem;">Account</td><td>Northside Heart Institute</td></tr>
+                <tr><td style="color:var(--sapContent_LabelColor);font-size:0.875rem;">Status</td><td>45 days past due</td></tr>
+                <tr><td style="color:var(--sapContent_LabelColor);font-size:0.875rem;">Total amount</td><td><strong>$18,750</strong></td></tr>
+                <tr><td style="color:var(--sapContent_LabelColor);font-size:0.875rem;">PO #</td><td><strong>PO-77821</strong></td></tr>
+                <tr><td style="color:var(--sapContent_LabelColor);font-size:0.875rem;">Terms</td><td>Net 30</td></tr>
+              </tbody>
+            </table>
+            <p style="font-weight:600;font-size:0.875rem;margin-bottom:0.5rem;">Line items</p>
+            <table class="table" style="margin:0;">
+              <thead>
+                <tr>
+                  <th>Description</th>
+                  <th style="text-align:right;">Amount</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr><td>Interlock™ Detachable Embolization Coils (6 units @ $2,500 each)</td><td style="text-align:right;">$15,000</td></tr>
+                <tr><td>Microcatheter Accessories</td><td style="text-align:right;">$1,750</td></tr>
+                <tr><td>Shipping &amp; Handling</td><td style="text-align:right;">$2,000</td></tr>
+                <tr><td><strong>Total</strong></td><td style="text-align:right;"><strong>$18,750</strong></td></tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+
+        <div class="card" id="inv-10567">
+          <div class="card-header">
+            Invoice INV-10567 (additional — revenue recovery)
+            <span class="badge badge-warning"><i class="fa-solid fa-clock"></i> 60 days past due</span>
+          </div>
+          <div class="card-body">
+            <table class="table" style="margin:0 0 1rem 0;">
+              <tbody>
+                <tr><td style="width:12rem;color:var(--sapContent_LabelColor);font-size:0.875rem;">Invoice #</td><td><strong>INV-10567</strong></td></tr>
+                <tr><td style="color:var(--sapContent_LabelColor);font-size:0.875rem;">Status</td><td>60 days past due</td></tr>
+                <tr><td style="color:var(--sapContent_LabelColor);font-size:0.875rem;">Total amount</td><td><strong>$27,900</strong></td></tr>
+                <tr><td style="color:var(--sapContent_LabelColor);font-size:0.875rem;">PO #</td><td><strong>PO-78114</strong></td></tr>
+                <tr><td style="color:var(--sapContent_LabelColor);font-size:0.875rem;">Terms</td><td>Net 30</td></tr>
+              </tbody>
+            </table>
+            <p style="font-weight:600;font-size:0.875rem;margin-bottom:0.5rem;">Line items</p>
+            <table class="table" style="margin:0;">
+              <thead>
+                <tr>
+                  <th>Description</th>
+                  <th style="text-align:right;">Amount</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr><td>IDC™ Interlocking Detachable Coils (10 units @ $2,300 each)</td><td style="text-align:right;">$23,000</td></tr>
+                <tr><td>Delivery &amp; Logistics</td><td style="text-align:right;">$2,900</td></tr>
+                <tr><td>Sterile Packaging &amp; Handling</td><td style="text-align:right;">$2,000</td></tr>
+                <tr><td><strong>Total</strong></td><td style="text-align:right;"><strong>$27,900</strong></td></tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+
+        <div class="card" id="inv-10602">
+          <div class="card-header">
+            Invoice INV-10602 (additional — revenue recovery)
+            <span class="badge badge-danger"><i class="fa-solid fa-clock"></i> 75 days past due</span>
+          </div>
+          <div class="card-body">
+            <table class="table" style="margin:0 0 1rem 0;">
+              <tbody>
+                <tr><td style="width:12rem;color:var(--sapContent_LabelColor);font-size:0.875rem;">Invoice #</td><td><strong>INV-10602</strong></td></tr>
+                <tr><td style="color:var(--sapContent_LabelColor);font-size:0.875rem;">Account</td><td>Northside Heart Institute</td></tr>
+                <tr><td style="color:var(--sapContent_LabelColor);font-size:0.875rem;">Status</td><td>75 days past due</td></tr>
+                <tr><td style="color:var(--sapContent_LabelColor);font-size:0.875rem;">Total amount</td><td><strong>$34,400</strong></td></tr>
+                <tr><td style="color:var(--sapContent_LabelColor);font-size:0.875rem;">PO #</td><td><strong>PO-78455</strong></td></tr>
+                <tr><td style="color:var(--sapContent_LabelColor);font-size:0.875rem;">Terms</td><td>Net 30</td></tr>
+              </tbody>
+            </table>
+            <p style="font-weight:600;font-size:0.875rem;margin-bottom:0.5rem;">Line items</p>
+            <table class="table" style="margin:0;">
+              <thead>
+                <tr>
+                  <th>Description</th>
+                  <th style="text-align:right;">Amount</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr><td>Interlock™-35 Fibered IDC™ System (8 units @ $3,800 each)</td><td style="text-align:right;">$30,400</td></tr>
+                <tr><td>Priority Courier Delivery</td><td style="text-align:right;">$2,500</td></tr>
+                <tr><td>Clinical Support Materials</td><td style="text-align:right;">$1,500</td></tr>
+                <tr><td><strong>Total</strong></td><td style="text-align:right;"><strong>$34,400</strong></td></tr>
               </tbody>
             </table>
           </div>
