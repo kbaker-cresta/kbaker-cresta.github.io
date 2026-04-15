@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Past Due Invoices — Ocean Medical CRM</title>
+<link href="https://fonts.googleapis.com/css2?family=Source+Sans+3:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet">
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+<link rel="stylesheet" href="shared.css">
+</head>
+<body>
+<div class="sap-app">
+
+  <header class="sap-shell-bar" role="banner">
+    <div class="sap-shell-bar-left">
+      <button type="button" class="sap-shell-menu-btn" aria-label="Menu"><i class="fa-solid fa-bars"></i></button>
+      <a class="sap-logo-mark" href="index.html">
+        <span class="sap-logo-badge">SAP</span>
+        <div class="sap-app-title">
+          <span class="sap-app-title-main">Ocean Medical CRM</span>
+          <span class="sap-app-title-sub">Fiori launchpad · Agent workspace</span>
+        </div>
+      </a>
+    </div>
+    <div class="sap-shell-bar-center">
+      <div class="search-container">
+        <i class="fa-solid fa-magnifying-glass" aria-hidden="true"></i>
+        <input type="search" class="search-input" placeholder="Search PO #, account, or order…" id="global-search" autocomplete="off" onkeypress="handleSearch(event)">
+      </div>
+    </div>
+    <div class="sap-shell-bar-right">
+      <button type="button" class="sap-shell-icon-btn" aria-label="Notifications"><i class="fa-regular fa-bell"></i></button>
+      <button type="button" class="sap-shell-icon-btn" aria-label="Help"><i class="fa-regular fa-circle-question"></i></button>
+      <div class="user-profile"><div class="avatar">MA</div><span>Maya (Agent)</span></div>
+    </div>
+  </header>
+
+  <div class="sap-shell-body">
+    <nav class="sidebar">
+      <div class="brand">Navigation</div>
+      <div class="nav-items">
+        <a class="nav-item" href="index.html"><i class="fa-solid fa-chart-pie"></i> Dashboard</a>
+        <a class="nav-item" href="orders.html"><i class="fa-solid fa-box-open"></i> Orders</a>
+        <a class="nav-item" href="cases.html"><i class="fa-solid fa-headset"></i> Support Cases</a>
+        <a class="nav-item" href="substitutions.html"><i class="fa-solid fa-arrows-rotate"></i> Substitutions <span class="sub-nav-badge">1</span></a>
+        <a class="nav-item active" href="invoices.html"><i class="fa-solid fa-file-invoice-dollar"></i> Past Due Invoices <span class="sub-nav-badge">3</span></a>
+        <a class="nav-item" href="accounts.html"><i class="fa-solid fa-users"></i> Accounts</a>
+      </div>
+    </nav>
+
+    <div class="main-content">
+      <div class="page-wrap">
+
+        <div class="page-header">
+          <div>
+            <h1 class="page-title">Past Due Invoices</h1>
+            <p class="page-subtitle">Aging balances and collection follow-up.</p>
+          </div>
+          <button class="btn btn-outline"><i class="fa-solid fa-file-export"></i> Export</button>
+        </div>
+
+        <div class="dashboard-stats">
+          <div class="stat-card" style="border-left-color:var(--danger);">
+            <div class="stat-label">Total past due</div>
+            <div class="stat-value">$182K</div>
+          </div>
+          <div class="stat-card" style="border-left-color:var(--warning);">
+            <div class="stat-label">Accounts &gt; 60 days</div>
+            <div class="stat-value">3</div>
+          </div>
+          <div class="stat-card">
+            <div class="stat-label">Collected (MTD)</div>
+            <div class="stat-value">$410K</div>
+          </div>
+        </div>
+
+        <div class="card">
+          <div class="card-header">
+            Open invoices
+            <span class="badge badge-danger"><i class="fa-solid fa-triangle-exclamation"></i> 3 past due</span>
+          </div>
+          <table class="table">
+            <thead>
+              <tr>
+                <th>Invoice #</th>
+                <th>Account</th>
+                <th>Due date</th>
+                <th>Days past due</th>
+                <th>Amount</th>
+                <th>Action</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><strong>INV-10602</strong></td>
+                <td>Northside Heart Institute</td>
+                <td>Jan 2, 2026</td>
+                <td><span class="badge badge-danger">75</span></td>
+                <td>$34,400</td>
+                <td><a class="btn btn-primary" style="padding:6px 12px;" href="accounts.html">Account</a></td>
+              </tr>
+              <tr>
+                <td>INV-10588</td>
+                <td>Pacific Regional Medical</td>
+                <td>Feb 10, 2026</td>
+                <td><span class="badge badge-warning">45</span></td>
+                <td>$12,900</td>
+                <td><button type="button" class="btn btn-outline" style="padding:6px 12px;">View</button></td>
+              </tr>
+              <tr>
+                <td>INV-10571</td>
+                <td>Harborview Clinic Network</td>
+                <td>Feb 28, 2026</td>
+                <td><span class="badge badge-warning">28</span></td>
+                <td>$8,200</td>
+                <td><button type="button" class="btn btn-outline" style="padding:6px 12px;">View</button></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</div>
+
+<script src="shared.js" defer></script>
+</body>
+</html>

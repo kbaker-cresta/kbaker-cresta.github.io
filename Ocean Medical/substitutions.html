@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Substitutions — Ocean Medical CRM</title>
+<link href="https://fonts.googleapis.com/css2?family=Source+Sans+3:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet">
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+<link rel="stylesheet" href="shared.css">
+</head>
+<body>
+<div class="sap-app">
+
+  <header class="sap-shell-bar" role="banner">
+    <div class="sap-shell-bar-left">
+      <button type="button" class="sap-shell-menu-btn" aria-label="Menu"><i class="fa-solid fa-bars"></i></button>
+      <a class="sap-logo-mark" href="index.html">
+        <span class="sap-logo-badge">SAP</span>
+        <div class="sap-app-title">
+          <span class="sap-app-title-main">Ocean Medical CRM</span>
+          <span class="sap-app-title-sub">Fiori launchpad · Agent workspace</span>
+        </div>
+      </a>
+    </div>
+    <div class="sap-shell-bar-center">
+      <div class="search-container">
+        <i class="fa-solid fa-magnifying-glass" aria-hidden="true"></i>
+        <input type="search" class="search-input" placeholder="Search PO #, account, or order…" id="global-search" autocomplete="off" onkeypress="handleSearch(event)">
+      </div>
+    </div>
+    <div class="sap-shell-bar-right">
+      <button type="button" class="sap-shell-icon-btn" aria-label="Notifications"><i class="fa-regular fa-bell"></i></button>
+      <button type="button" class="sap-shell-icon-btn" aria-label="Help"><i class="fa-regular fa-circle-question"></i></button>
+      <div class="user-profile"><div class="avatar">MA</div><span>Maya (Agent)</span></div>
+    </div>
+  </header>
+
+  <div class="sap-shell-body">
+    <nav class="sidebar">
+      <div class="brand">Navigation</div>
+      <div class="nav-items">
+        <a class="nav-item" href="index.html"><i class="fa-solid fa-chart-pie"></i> Dashboard</a>
+        <a class="nav-item" href="orders.html"><i class="fa-solid fa-box-open"></i> Orders</a>
+        <a class="nav-item" href="cases.html"><i class="fa-solid fa-headset"></i> Support Cases</a>
+        <a class="nav-item active" href="substitutions.html"><i class="fa-solid fa-arrows-rotate"></i> Substitutions <span class="sub-nav-badge">1</span></a>
+        <a class="nav-item" href="invoices.html"><i class="fa-solid fa-file-invoice-dollar"></i> Past Due Invoices <span class="sub-nav-badge">3</span></a>
+        <a class="nav-item" href="accounts.html"><i class="fa-solid fa-users"></i> Accounts</a>
+      </div>
+    </nav>
+
+    <div class="main-content">
+      <div class="page-wrap">
+
+        <div class="page-header">
+          <div>
+            <h1 class="page-title">Substitutions</h1>
+            <p class="page-subtitle">Backorder lines with approved alternate SKUs.</p>
+          </div>
+        </div>
+
+        <div class="dashboard-stats">
+          <div class="stat-card" style="border-left-color:var(--warning);">
+            <div class="stat-label">Awaiting approval</div>
+            <div class="stat-value">1</div>
+          </div>
+          <div class="stat-card">
+            <div class="stat-label">Approved (week)</div>
+            <div class="stat-value">12</div>
+          </div>
+          <div class="stat-card" style="border-left-color:var(--secondary);">
+            <div class="stat-label">Declined</div>
+            <div class="stat-value">0</div>
+          </div>
+        </div>
+
+        <div class="card">
+          <div class="card-header">
+            Pending substitution requests
+            <span class="badge badge-warning"><i class="fa-solid fa-arrows-rotate"></i> 1 open</span>
+          </div>
+          <table class="table">
+            <thead>
+              <tr>
+                <th>PO</th>
+                <th>Account</th>
+                <th>Original SKU</th>
+                <th>Substitute SKU</th>
+                <th>Status</th>
+                <th>Action</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><strong>784331</strong></td>
+                <td>Northside Heart Institute</td>
+                <td>EMB-C200</td>
+                <td>EMB-C200-A</td>
+                <td><span class="badge badge-warning"><i class="fa-solid fa-clock"></i> Pending approval</span></td>
+                <td>
+                  <button type="button" class="btn btn-primary" style="padding:6px 12px;">Approve</button>
+                  <button type="button" class="btn btn-outline" style="padding:6px 12px;">Decline</button>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <p class="demo-tip"><em>Demo tip:</em> This row ties to the dashboard alert for PO <strong>784331</strong> and the order exception.</p>
+
+      </div>
+    </div>
+  </div>
+</div>
+
+<script src="shared.js" defer></script>
+</body>
+</html>

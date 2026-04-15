@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Dashboard — Ocean Medical CRM</title>
+<title>Support Cases — Ocean Medical CRM</title>
 <link href="https://fonts.googleapis.com/css2?family=Source+Sans+3:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet">
 <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
 <link rel="stylesheet" href="shared.css">
@@ -11,7 +11,6 @@
 <body>
 <div class="sap-app">
 
-  <!-- Shell Bar -->
   <header class="sap-shell-bar" role="banner">
     <div class="sap-shell-bar-left">
       <button type="button" class="sap-shell-menu-btn" aria-label="Menu"><i class="fa-solid fa-bars"></i></button>
@@ -37,110 +36,88 @@
   </header>
 
   <div class="sap-shell-body">
-    <!-- Sidebar -->
     <nav class="sidebar">
       <div class="brand">Navigation</div>
       <div class="nav-items">
-        <a class="nav-item active" href="index.html"><i class="fa-solid fa-chart-pie"></i> Dashboard</a>
+        <a class="nav-item" href="index.html"><i class="fa-solid fa-chart-pie"></i> Dashboard</a>
         <a class="nav-item" href="orders.html"><i class="fa-solid fa-box-open"></i> Orders</a>
-        <a class="nav-item" href="cases.html"><i class="fa-solid fa-headset"></i> Support Cases</a>
+        <a class="nav-item active" href="cases.html"><i class="fa-solid fa-headset"></i> Support Cases</a>
         <a class="nav-item" href="substitutions.html"><i class="fa-solid fa-arrows-rotate"></i> Substitutions <span class="sub-nav-badge">1</span></a>
         <a class="nav-item" href="invoices.html"><i class="fa-solid fa-file-invoice-dollar"></i> Past Due Invoices <span class="sub-nav-badge">3</span></a>
         <a class="nav-item" href="accounts.html"><i class="fa-solid fa-users"></i> Accounts</a>
       </div>
     </nav>
 
-    <!-- Main Content -->
     <div class="main-content">
       <div class="page-wrap">
 
         <div class="page-header">
           <div>
-            <h1 class="page-title">Welcome back, Maya</h1>
-            <p class="page-subtitle">Here's what's happening today.</p>
+            <h1 class="page-title">Support Cases</h1>
+            <p class="page-subtitle">Customer issues and follow-ups.</p>
           </div>
+          <button class="btn btn-outline"><i class="fa-solid fa-plus"></i> New case</button>
         </div>
 
         <div class="dashboard-stats">
           <div class="stat-card">
-            <div class="stat-label">Orders Processed Today</div>
-            <div class="stat-value">42</div>
+            <div class="stat-label">My open cases</div>
+            <div class="stat-value">5</div>
           </div>
           <div class="stat-card" style="border-left-color:var(--warning);">
-            <div class="stat-label">Pending Backorders</div>
-            <div class="stat-value">7</div>
+            <div class="stat-label">SLA at risk</div>
+            <div class="stat-value">2</div>
           </div>
           <div class="stat-card" style="border-left-color:var(--secondary);">
-            <div class="stat-label">Avg Resolution Time</div>
-            <div class="stat-value">4.2m</div>
+            <div class="stat-label">Resolved (30 days)</div>
+            <div class="stat-value">128</div>
           </div>
-        </div>
-
-        <div class="card" style="margin-bottom:16px;">
-          <div class="card-header">
-            Alerts &amp; Action Required
-            <span class="badge badge-danger"><i class="fa-solid fa-triangle-exclamation"></i> 2 urgent</span>
-          </div>
-          <table class="table">
-            <tbody>
-              <tr>
-                <td><span class="badge badge-danger"><i class="fa-solid fa-circle-exclamation"></i> Backorder</span></td>
-                <td><strong>PO 784331</strong> — Northside Heart Institute</td>
-                <td>EMB-C200 backordered · substitute available</td>
-                <td><a class="btn btn-primary" href="orders.html" style="padding:6px 14px;font-size:13px;">View Order</a></td>
-              </tr>
-              <tr>
-                <td><span class="badge badge-warning"><i class="fa-solid fa-clock"></i> Overdue</span></td>
-                <td><strong>INV-10602</strong> — Northside Heart Institute</td>
-                <td>75 days past due · $34,400 outstanding</td>
-                <td><a class="btn btn-outline" href="invoices.html" style="padding:6px 14px;font-size:13px;">View Invoice</a></td>
-              </tr>
-            </tbody>
-          </table>
         </div>
 
         <div class="card">
           <div class="card-header">
-            Recent Orders
+            Queue
             <button class="btn btn-outline"><i class="fa-solid fa-filter"></i> Filter</button>
           </div>
           <table class="table">
             <thead>
               <tr>
-                <th>PO Number</th>
+                <th>Case #</th>
                 <th>Account</th>
-                <th>Date</th>
+                <th>Subject</th>
+                <th>Priority</th>
                 <th>Status</th>
                 <th>Action</th>
               </tr>
             </thead>
             <tbody>
               <tr>
-                <td><strong>784331</strong></td>
+                <td><strong>CS-48921</strong></td>
                 <td>Northside Heart Institute</td>
-                <td>Today, 10:45 AM</td>
-                <td><span class="badge badge-warning"><i class="fa-solid fa-clock"></i> Exception</span></td>
-                <td><a class="btn btn-primary" href="orders.html">View Order</a></td>
+                <td>Backorder on PO 784331 — substitute approval</td>
+                <td><span class="badge badge-danger"><i class="fa-solid fa-arrow-up"></i> High</span></td>
+                <td><span class="badge badge-warning"><i class="fa-solid fa-clock"></i> Working</span></td>
+                <td><a class="btn btn-primary" style="padding:6px 12px;" href="orders.html">Open order</a></td>
               </tr>
               <tr>
-                <td>784328</td>
+                <td>CS-48905</td>
                 <td>Mercy General Hospital</td>
-                <td>Today, 09:12 AM</td>
-                <td><span class="badge badge-success"><i class="fa-solid fa-check"></i> Processing</span></td>
-                <td><a class="btn btn-outline" style="padding:6px 12px;" href="orders.html">View</a></td>
+                <td>Invoice copy request</td>
+                <td><span class="badge badge-success"><i class="fa-solid fa-minus"></i> Normal</span></td>
+                <td><span class="badge badge-success"><i class="fa-solid fa-check"></i> Pending customer</span></td>
+                <td><button type="button" class="btn btn-outline" style="padding:6px 12px;">View</button></td>
               </tr>
               <tr>
-                <td>784299</td>
+                <td>CS-48890</td>
                 <td>Seattle Surgical Center</td>
-                <td>Yesterday</td>
-                <td><span class="badge badge-success"><i class="fa-solid fa-check"></i> Shipped</span></td>
-                <td><a class="btn btn-outline" style="padding:6px 12px;" href="orders.html">View</a></td>
+                <td>Returns RMA — damaged shipment</td>
+                <td><span class="badge badge-warning"><i class="fa-solid fa-arrow-up"></i> Medium</span></td>
+                <td><span class="badge badge-success"><i class="fa-solid fa-check"></i> Resolved</span></td>
+                <td><button type="button" class="btn btn-outline" style="padding:6px 12px;">View</button></td>
               </tr>
             </tbody>
           </table>
         </div>
-
-        <p class="demo-tip"><em>Demo tip:</em> Click <strong>View Order</strong> on PO 784331 to open the order detail, or navigate using the sidebar.</p>
 
       </div>
     </div>
