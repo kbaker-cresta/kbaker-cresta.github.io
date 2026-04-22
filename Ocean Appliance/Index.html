@@ -1,0 +1,517 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Work Order · 9258280 · Field Service</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="app">
+      <header class="global-header" aria-label="Global navigation">
+        <div class="global-header__left">
+          <button type="button" class="gh-icon-btn gh-waffle" aria-label="App launcher">
+            <svg width="20" height="20" viewBox="0 0 20 20" aria-hidden="true">
+              <path fill="currentColor" d="M4 4h2v2H4V4zm5 0h2v2H9V4zm5 0h2v2h-2V4zM4 9h2v2H4V9zm5 0h2v2H9V9zm5 0h2v2h-2V9zM4 14h2v2H4v-2zm5 0h2v2H9v-2zm5 0h2v2h-2v-2z" />
+            </svg>
+          </button>
+          <span class="gh-brand">Dynamics 365</span>
+          <span class="gh-vrule" aria-hidden="true"></span>
+          <span class="gh-module">Field Service</span>
+        </div>
+        <div class="global-header__search" role="search">
+          <span class="gh-search__icon" aria-hidden="true">
+            <svg width="16" height="16" viewBox="0 0 16 16"><path fill="currentColor" d="M6.5 1a5.5 5.5 0 014.23 9.02l2.86 2.85-.7.7-2.87-2.86A5.5 5.5 0 116.5 1zm0 1a4.5 4.5 0 100 9 4.5 4.5 0 000-9z"/></svg>
+          </span>
+          <input class="gh-search__input" type="search" placeholder="Search" readonly tabindex="-1" aria-label="Search" />
+        </div>
+        <div class="global-header__right">
+          <div class="gh-newlook" title="Try the new look">
+            <span class="gh-newlook__label">New look</span>
+            <span class="gh-toggle gh-toggle--on" aria-hidden="true"><span class="gh-toggle__knob"></span></span>
+          </div>
+          <button type="button" class="gh-icon-btn gh-icon-btn--light" aria-label="Tips">
+            <svg width="18" height="18" viewBox="0 0 16 16" aria-hidden="true"><path fill="currentColor" d="M8 1a7 7 0 100 14A7 7 0 008 1zm.5 11H7.5V10h1v2zm0-3H7.5a2.5 2.5 0 112.5-2.5c0 1.2-.8 1.8-1.5 2.3-.3.2-.5.2-.5.7V9z"/></svg>
+          </button>
+          <button type="button" class="gh-icon-btn gh-icon-btn--light" aria-label="Quick create">
+            <svg width="18" height="18" viewBox="0 0 16 16" aria-hidden="true"><path fill="currentColor" d="M8 1v6h6v2H8v6H6V9H0V7h6V1h2z"/></svg>
+          </button>
+          <button type="button" class="gh-icon-btn gh-icon-btn--light" aria-label="Settings">
+            <svg width="18" height="18" viewBox="0 0 16 16" aria-hidden="true"><path fill="currentColor" d="M8 5a3 3 0 100 6 3 3 0 000-6zm6.9 4h-1.2a5 5 0 00-.2.8l1 .9-1.7 1.7-.9-1a5 5 0 00-.8.2v1.2H6.9v-1.2a5 5 0 00-.8-.2l-.9 1-1.7-1.7 1-.9a5 5 0 00-.2-.8H1.1V7h1.2a5 5 0 00.2-.8l-1-.9L3 3.6l.9 1a5 5 0 00.8-.2V3.1h2.2v1.2a5 5 0 00.8.2l.9-1L10 5.4l-1 .9c.1.26.17.53.2.8h1.2v2z"/></svg>
+          </button>
+          <button type="button" class="gh-icon-btn gh-icon-btn--light" aria-label="Notifications">
+            <svg width="18" height="18" viewBox="0 0 16 16" aria-hidden="true"><path fill="currentColor" d="M8 1a4 4 0 00-4 4v2.5L2 11h12l-2-3.5V5a4 4 0 00-4-4zm0 14a2 2 0 002-1H6a2 2 0 002 1z"/></svg>
+          </button>
+          <button type="button" class="gh-icon-btn gh-icon-btn--light" aria-label="Help">
+            <svg width="18" height="18" viewBox="0 0 16 16" aria-hidden="true"><path fill="currentColor" d="M8 1a7 7 0 100 14A7 7 0 008 1zm0 10.5a1 1 0 110 2 1 1 0 010-2zM8 4a2.5 2.5 0 012 2.4c0 1.4-1 2-1.6 2.4-.2.1-.4.2-.4.7v.5H6.3v-.8c0-1 .6-1.5 1.2-1.9.3-.2.5-.4.5-.9a.8.8 0 00-1.6 0H4.1A2.5 2.5 0 018 4z"/></svg>
+          </button>
+          <span class="gh-avatar" aria-hidden="true">KB</span>
+        </div>
+      </header>
+
+      <div class="app-body">
+        <nav class="sidenav" aria-label="Site map">
+          <button type="button" class="sidenav__pin" aria-label="Collapse navigation">
+            <svg width="18" height="14" viewBox="0 0 18 14" aria-hidden="true"><path fill="currentColor" d="M0 0h18v2H0V0zm0 6h18v2H0V6zm0 6h18v2H0v-2z"/></svg>
+          </button>
+          <button type="button" class="sidenav__link">Home</button>
+          <button type="button" class="sidenav__link sidenav__link--flyout">Recent <span class="sidenav__caret">▾</span></button>
+          <button type="button" class="sidenav__link sidenav__link--flyout">Pinned <span class="sidenav__caret">▾</span></button>
+
+          <div class="sidenav__group">
+            <div class="sidenav__heading">My work</div>
+            <button type="button" class="sidenav__link">Get started</button>
+            <button type="button" class="sidenav__link">Dashboards</button>
+          </div>
+          <div class="sidenav__group">
+            <div class="sidenav__heading">Scheduling</div>
+            <button type="button" class="sidenav__link sidenav__link--active" aria-current="page">Work orders</button>
+            <button type="button" class="sidenav__link">Schedule board</button>
+            <button type="button" class="sidenav__link">Bookings</button>
+            <button type="button" class="sidenav__link">Resource requirements</button>
+            <button type="button" class="sidenav__link">Requirement groups</button>
+            <button type="button" class="sidenav__link">Time off requests</button>
+            <button type="button" class="sidenav__link">Time entries</button>
+          </div>
+          <div class="sidenav__group">
+            <div class="sidenav__heading">Customers</div>
+            <button type="button" class="sidenav__link">Accounts</button>
+            <button type="button" class="sidenav__link">Contacts</button>
+          </div>
+          <div class="sidenav__group">
+            <div class="sidenav__heading">Service delivery</div>
+            <button type="button" class="sidenav__link">Cases</button>
+            <button type="button" class="sidenav__link">Agreements</button>
+          </div>
+          <div class="sidenav__group">
+            <div class="sidenav__heading">Assets</div>
+            <button type="button" class="sidenav__link">Assets</button>
+            <button type="button" class="sidenav__link">Functional locations</button>
+            <button type="button" class="sidenav__link">IoT alerts</button>
+            <button type="button" class="sidenav__link">IoT devices</button>
+          </div>
+
+          <div class="sidenav__footer">
+            <span class="sidenav__footer-label">Service</span>
+            <button type="button" class="sidenav__footer-btn" aria-label="App settings">
+              <svg width="14" height="14" viewBox="0 0 16 16" aria-hidden="true"><path fill="currentColor" d="M8 5a3 3 0 100 6 3 3 0 000-6zm6.9 4h-1.2a5 5 0 00-.2.8l1 .9-1.7 1.7-.9-1a5 5 0 00-.8.2v1.2H6.9v-1.2a5 5 0 00-.8-.2l-.9 1-1.7-1.7 1-.9a5 5 0 00-.2-.8H1.1V7h1.2a5 5 0 00.2-.8l-1-.9L3 3.6l.9 1a5 5 0 00.8-.2V3.1h2.2v1.2a5 5 0 00.8.2l.9-1L10 5.4l-1 .9c.1.26.17.53.2.8h1.2v2z"/></svg>
+            </button>
+            <button type="button" class="sidenav__footer-btn" aria-label="Change area">
+              <svg width="14" height="14" viewBox="0 0 16 16" aria-hidden="true"><path fill="currentColor" d="M8 2l6 6H10v6H6V8H2l6-6z"/></svg>
+            </button>
+          </div>
+        </nav>
+
+        <div class="main-pane">
+          <div class="page-surface">
+            <div class="command-bar" role="toolbar" aria-label="Command bar">
+              <div class="command-bar__group">
+                <button type="button" class="cmd cmd--icon" aria-label="Back">
+                  <svg width="16" height="16" viewBox="0 0 16 16" aria-hidden="true"><path fill="currentColor" d="M10 3L5 8l5 5 1-1-4-4 4-4-1-1z"/></svg>
+                </button>
+                <span class="command-bar__divider" aria-hidden="true"></span>
+                <button type="button" class="cmd cmd--primary">Save</button>
+                <button type="button" class="cmd">Save &amp; Close</button>
+                <span class="command-bar__divider" aria-hidden="true"></span>
+                <button type="button" class="cmd">+ New</button>
+                <button type="button" class="cmd">Delete</button>
+                <button type="button" class="cmd">Refresh</button>
+              </div>
+              <div class="command-bar__group command-bar__group--right">
+                <button type="button" class="cmd cmd--share">Share <span class="cmd__chevron">▾</span></button>
+              </div>
+            </div>
+
+            <header class="record-header" aria-labelledby="wo-title">
+              <div class="record-header__main">
+                <h1 id="wo-title" class="record-header__title">9258280 · Open</h1>
+                <div class="record-header__entity-bc" aria-label="Record type">
+                  <span class="record-header__entity">Work order</span>
+                  <span class="record-header__entity-sep">›</span>
+                  <span class="record-header__entity">Work order</span>
+                  <span class="record-header__entity-caret" aria-hidden="true">▾</span>
+                </div>
+                <p class="record-header__tagline">Hobart Food Equipment — CL44 (14‑min PS call: rinse / booster / probe)</p>
+              </div>
+              <div class="record-header__meta">
+                <div class="header-field">
+                  <span class="header-field__label">Created on</span>
+                  <span class="header-field__value">Apr 18, 2026 8:12 AM</span>
+                </div>
+                <div class="header-field">
+                  <span class="header-field__label">Service account</span>
+                  <span class="header-field__value lookup lookup--compact">
+                    <span class="lookup__text">Copperline Kitchen &amp; Bar</span>
+                    <span class="lookup__glyph" aria-hidden="true">▾</span>
+                  </span>
+                </div>
+              </div>
+            </header>
+
+            <div class="status-strip" aria-label="Status and priority">
+              <span class="chip chip--status chip--open">Open</span>
+              <span class="chip chip--substatus">Diagnostics complete — parts recommended</span>
+              <span class="chip chip--priority chip--normal">Normal</span>
+              <span class="header-field header-field--inline">
+                <span class="header-field__label">System status</span>
+                <span class="header-field__value">Active</span>
+              </span>
+            </div>
+
+            <nav class="tab-strip" aria-label="Form tabs" role="tablist">
+              <button type="button" class="tab tab--active" role="tab" aria-selected="true" data-tab="general">General</button>
+              <button type="button" class="tab" role="tab" aria-selected="false" data-tab="products">Products and services</button>
+              <button type="button" class="tab" role="tab" aria-selected="false" data-tab="services">Tasks</button>
+              <button type="button" class="tab" role="tab" aria-selected="false" data-tab="bookings">Reference</button>
+              <button type="button" class="tab" role="tab" aria-selected="false" data-tab="notes">Timeline</button>
+              <button type="button" class="tab tab--related" role="tab" aria-selected="false" data-tab="related">Related <span class="tab__caret">▾</span></button>
+            </nav>
+          </div>
+
+      <div class="form-layout">
+        <main class="form-main">
+          <div class="tab-panels">
+            <div class="tab-panel tab-panel--active" id="panel-general" role="tabpanel" data-panel="general">
+              <article class="card">
+                <header class="card__head">
+                  <h2 class="card__title">Details</h2>
+                </header>
+                <div class="card__body">
+                  <div class="field-grid">
+                    <div class="field">
+                      <label class="field__label">Work order number</label>
+                      <div class="field__control field__control--readonly">9258280</div>
+                    </div>
+                    <div class="field">
+                      <label class="field__label">Serial number</label>
+                      <div class="field__control field__control--readonly">85-1113641</div>
+                    </div>
+                    <div class="field field--full">
+                      <label class="field__label">Name</label>
+                      <div class="field__control">
+                        <input type="text" readonly value="CL44 — Low rinse temperature / booster contactor not engaging (PS assist)" />
+                      </div>
+                    </div>
+                    <div class="field">
+                      <label class="field__label">Work order type</label>
+                      <div class="field__control lookup">
+                        <span class="lookup__text">Technical support — phone / remote</span>
+                        <span class="lookup__glyph" aria-hidden="true">▾</span>
+                      </div>
+                    </div>
+                    <div class="field">
+                      <label class="field__label">Priority</label>
+                      <div class="field__control lookup">
+                        <span class="lookup__text">Normal</span>
+                        <span class="lookup__glyph" aria-hidden="true">▾</span>
+                      </div>
+                    </div>
+                    <div class="field">
+                      <label class="field__label">Service territory</label>
+                      <div class="field__control lookup">
+                        <span class="lookup__text">Columbus Metro — Commercial</span>
+                        <span class="lookup__glyph" aria-hidden="true">▾</span>
+                      </div>
+                    </div>
+                    <div class="field">
+                      <label class="field__label">Taxable</label>
+                      <div class="field__control toggle-row">
+                        <span class="toggle toggle--on" aria-hidden="true"></span>
+                        <span class="toggle-row__text">Yes</span>
+                      </div>
+                    </div>
+                    <div class="field field--full">
+                      <label class="field__label">Instructions (technician)</label>
+                      <div class="field__control">
+                        <textarea readonly rows="5">Context: ~14‑minute product-support session with field tech on Hobart CL44, s/n 85‑1113641 — tech reports low rinse temperature and booster contactor not engaging/pulling in.
+
+Document support path: (1) programming / menu walkthrough to confirm settings and steps; (2) electrical verification at connector J16 per Hobart guidance; (3) booster thermistor probe resistance check; (4) review machine error/history logs.
+
+Outcome: Product support recommends replacing the booster thermistor probe. Order probe (or confirm van stock) before return trip; re‑check rinse circuit and contactor pull‑in after install. LOTO as required; unit on cook line — access 6:00–10:00 AM if follow‑up onsite.</textarea>
+                      </div>
+                    </div>
+                    <div class="field field--full">
+                      <label class="field__label">Customer incident description</label>
+                      <div class="field__control">
+                        <textarea readonly rows="4">Field tech on CL44 (85‑1113641) reports rinse supply running cold / below target and booster contactor not energizing. Engaged Hobart product support by phone (~14 min): stepped through programming, performed electrical checks at J16, measured booster thermistor probe resistance, and reviewed error/history. Support concluded with recommendation to replace the booster thermistor probe; kitchen aware rinse performance must meet local health expectations.</textarea>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </article>
+
+              <article class="card">
+                <header class="card__head">
+                  <h2 class="card__title">Location</h2>
+                </header>
+                <div class="card__body">
+                  <div class="field-grid">
+                    <div class="field field--full">
+                      <label class="field__label">Service address</label>
+                      <div class="field__control">
+                        <textarea readonly rows="2">Copperline Kitchen &amp; Bar — 214 E Long St, Columbus, OH 43215, United States</textarea>
+                      </div>
+                    </div>
+                    <div class="field">
+                      <label class="field__label">Functional location</label>
+                      <div class="field__control lookup">
+                        <span class="lookup__text">CLB / Cook line — CL44 conveyor station</span>
+                        <span class="lookup__glyph" aria-hidden="true">▾</span>
+                      </div>
+                    </div>
+                    <div class="field">
+                      <label class="field__label">Latitude</label>
+                      <div class="field__control field__control--readonly">39.9637</div>
+                    </div>
+                    <div class="field">
+                      <label class="field__label">Longitude</label>
+                      <div class="field__control field__control--readonly">-82.9967</div>
+                    </div>
+                  </div>
+                  <div class="map-placeholder" role="img" aria-label="Map preview (placeholder)">Map</div>
+                </div>
+              </article>
+
+              <article class="card">
+                <header class="card__head">
+                  <h2 class="card__title">Financials</h2>
+                </header>
+                <div class="card__body">
+                  <div class="field-grid">
+                    <div class="field">
+                      <label class="field__label">Price list</label>
+                      <div class="field__control lookup">
+                        <span class="lookup__text">Hobart US — Commercial Service 2026</span>
+                        <span class="lookup__glyph" aria-hidden="true">▾</span>
+                      </div>
+                    </div>
+                    <div class="field">
+                      <label class="field__label">Billing account</label>
+                      <div class="field__control lookup">
+                        <span class="lookup__text">Copperline Kitchen &amp; Bar (AP)</span>
+                        <span class="lookup__glyph" aria-hidden="true">▾</span>
+                      </div>
+                    </div>
+                    <div class="field">
+                      <label class="field__label">Estimated subtotal</label>
+                      <div class="field__control field__control--readonly">$412.50</div>
+                    </div>
+                    <div class="field">
+                      <label class="field__label">Estimated tax</label>
+                      <div class="field__control field__control--readonly">$29.09</div>
+                    </div>
+                  </div>
+                </div>
+              </article>
+
+              <article class="card">
+                <header class="card__head card__head--with-action">
+                  <h2 class="card__title">Contacts</h2>
+                  <button type="button" class="card__action">+ Add contact</button>
+                </header>
+                <div class="card__body">
+                  <div class="field-grid">
+                    <div class="field">
+                      <label class="field__label">Primary contact</label>
+                      <div class="field__control lookup">
+                        <span class="lookup__text">Jordan Ellis — Facilities Manager</span>
+                        <span class="lookup__glyph" aria-hidden="true">▾</span>
+                      </div>
+                    </div>
+                    <div class="field">
+                      <label class="field__label">Site phone</label>
+                      <div class="field__control field__control--readonly">(614) 555-0142</div>
+                    </div>
+                    <div class="field field--full">
+                      <label class="field__label">Onsite access notes</label>
+                      <div class="field__control">
+                        <textarea readonly rows="2">Dock B, ring kitchen manager; badge required. CL44 on cook line — escort through BOH.</textarea>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </article>
+
+              <article class="card">
+                <header class="card__head card__head--with-action">
+                  <h2 class="card__title">Bookings</h2>
+                  <button type="button" class="card__action">+ New booking</button>
+                </header>
+                <div class="card__body card__body--flush">
+                  <div class="subgrid">
+                    <div class="subgrid__head">
+                      <span class="subgrid__cell">Name</span>
+                      <span class="subgrid__cell">Start</span>
+                      <span class="subgrid__cell">End</span>
+                      <span class="subgrid__cell">Resource</span>
+                      <span class="subgrid__cell">Status</span>
+                    </div>
+                    <div class="subgrid__row">
+                      <span class="subgrid__cell subgrid__cell--link">BK-908441</span>
+                      <span class="subgrid__cell">Apr 22, 2026 7:00 AM</span>
+                      <span class="subgrid__cell">Apr 22, 2026 11:00 AM</span>
+                      <span class="subgrid__cell">M. Ortega (Hobart FSE)</span>
+                      <span class="subgrid__cell"><span class="pill pill--scheduled">Scheduled</span></span>
+                    </div>
+                  </div>
+                </div>
+              </article>
+
+              <article class="card">
+                <header class="card__head card__head--with-action">
+                  <h2 class="card__title">Customer asset</h2>
+                  <button type="button" class="card__action">+ Add asset</button>
+                </header>
+                <div class="card__body">
+                  <div class="field-grid">
+                    <div class="field">
+                      <label class="field__label">Asset</label>
+                      <div class="field__control lookup">
+                        <span class="lookup__text">Hobart CL44 — Serial 85-1113641</span>
+                        <span class="lookup__glyph" aria-hidden="true">▾</span>
+                      </div>
+                    </div>
+                    <div class="field">
+                      <label class="field__label">Asset category</label>
+                      <div class="field__control field__control--readonly">CL44 — Rinse / booster (conveyor appliance)</div>
+                    </div>
+                    <div class="field field--full">
+                      <label class="field__label">Warranty</label>
+                      <div class="field__control field__control--readonly">On-site labor through Jun 30, 2026 (extended)</div>
+                    </div>
+                  </div>
+                </div>
+              </article>
+            </div>
+
+            <div class="tab-panel" id="panel-products" role="tabpanel" hidden data-panel="products">
+              <article class="card">
+                <header class="card__head card__head--with-action">
+                  <h2 class="card__title">Products and services</h2>
+                  <button type="button" class="card__action">+ Add product</button>
+                </header>
+                <div class="card__body card__body--flush">
+                  <div class="subgrid">
+                    <div class="subgrid__head">
+                      <span class="subgrid__cell">Product</span>
+                      <span class="subgrid__cell">Qty</span>
+                      <span class="subgrid__cell">UoM</span>
+                      <span class="subgrid__cell">Est. price</span>
+                    </div>
+                    <div class="subgrid__row">
+                      <span class="subgrid__cell">Booster thermistor probe — CL44 (recommended by product support)</span>
+                      <span class="subgrid__cell">1</span>
+                      <span class="subgrid__cell">EA</span>
+                      <span class="subgrid__cell">$94.50</span>
+                    </div>
+                    <div class="subgrid__row">
+                      <span class="subgrid__cell">Connector / harness — J16 service loop (if damaged on inspection)</span>
+                      <span class="subgrid__cell">0</span>
+                      <span class="subgrid__cell">EA</span>
+                      <span class="subgrid__cell">$0.00</span>
+                    </div>
+                  </div>
+                </div>
+              </article>
+            </div>
+
+            <div class="tab-panel" id="panel-services" role="tabpanel" hidden data-panel="services">
+              <article class="card">
+                <header class="card__head card__head--with-action">
+                  <h2 class="card__title">Tasks</h2>
+                  <button type="button" class="card__action">+ New task</button>
+                </header>
+                <div class="card__body card__body--flush">
+                  <div class="subgrid">
+                    <div class="subgrid__head">
+                      <span class="subgrid__cell">Service</span>
+                      <span class="subgrid__cell">Duration</span>
+                      <span class="subgrid__cell">Est. price</span>
+                    </div>
+                    <div class="subgrid__row">
+                      <span class="subgrid__cell">Hobart product support — CL44 phone assist (programming, J16, probe, history)</span>
+                      <span class="subgrid__cell">0.23 hr</span>
+                      <span class="subgrid__cell">$0.00</span>
+                    </div>
+                    <div class="subgrid__row">
+                      <span class="subgrid__cell">Field follow‑up — install probe, verify rinse &amp; booster contactor</span>
+                      <span class="subgrid__cell">2.0 hr</span>
+                      <span class="subgrid__cell">$128.00</span>
+                    </div>
+                  </div>
+                </div>
+              </article>
+            </div>
+
+            <div class="tab-panel" id="panel-bookings" role="tabpanel" hidden data-panel="bookings">
+              <article class="card">
+                <header class="card__head">
+                  <h2 class="card__title">Reference</h2>
+                </header>
+                <div class="card__body">
+                  <p class="muted muted--tight"><strong>Support call checklist (CL44, s/n 85‑1113641)</strong> — ~14 min with product support:</p>
+                  <ul class="ref-list">
+                    <li><strong>Symptoms:</strong> low rinse temperature; booster contactor not engaging.</li>
+                    <li><strong>Programming:</strong> menu / parameter walkthrough to confirm correct program and rinse-related steps.</li>
+                    <li><strong>Electrical:</strong> checks at connector <strong>J16</strong> per Hobart guidance (continuity / presence of control voltage as directed).</li>
+                    <li><strong>Probe:</strong> booster thermistor probe resistance measured and compared to expected range.</li>
+                    <li><strong>History:</strong> error log / fault history reviewed for rinse and booster-related codes.</li>
+                    <li><strong>Resolution:</strong> product support recommends <strong>replacing the booster thermistor probe</strong>; verify contactor pull‑in after repair.</li>
+                  </ul>
+                </div>
+              </article>
+            </div>
+
+            <div class="tab-panel" id="panel-notes" role="tabpanel" hidden data-panel="notes">
+              <article class="card">
+                <header class="card__head">
+                  <h2 class="card__title">Timeline</h2>
+                </header>
+                <div class="card__body">
+                  <div class="field field--full">
+                    <label class="field__label">Internal note</label>
+                    <div class="field__control">
+                      <textarea readonly rows="4">14‑min PS call logged: low rinse + non‑engaging booster contactor on CL44 85‑1113641. Support led tech through programming, J16 electrical checks, booster thermistor probe resistance, and error/history review. Recommendation: replace booster thermistor probe — quote on file; confirm van stock before return. Escalate if contactor still fails to pull in after probe swap and re‑check at J16.</textarea>
+                    </div>
+                  </div>
+                </div>
+              </article>
+            </div>
+
+            <div class="tab-panel" id="panel-related" role="tabpanel" hidden data-panel="related">
+              <article class="card">
+                <header class="card__head">
+                  <h2 class="card__title">Related</h2>
+                </header>
+                <div class="card__body">
+                  <p class="muted">Select a related record type from the menu (mock).</p>
+                </div>
+              </article>
+            </div>
+          </div>
+        </main>
+
+        <aside class="side-pane" aria-label="Related pane">
+          <div class="side-pane__title">Related</div>
+          <ul class="side-pane__list">
+            <li><button type="button" class="side-link">Bookable resource bookings</button></li>
+            <li><button type="button" class="side-link">Service tasks</button></li>
+            <li><button type="button" class="side-link">Incidents</button></li>
+            <li><button type="button" class="side-link">Purchase orders</button></li>
+            <li><button type="button" class="side-link">Attachments</button></li>
+          </ul>
+          <div class="side-pane__title side-pane__title--spaced">Summary (Copilot)</div>
+          <div class="copilot-box">
+            <p class="copilot-box__text">
+              CL44 (85‑1113641): field tech reported low rinse temperature and booster contactor not engaging. A ~14‑minute Hobart product-support session covered programming, electrical checks at J16, booster thermistor probe resistance, and error history — with a final recommendation to replace the booster thermistor probe. Follow‑up visit should verify rinse performance and contactor operation after install.
+            </p>
+          </div>
+        </aside>
+      </div>
+        </div>
+      </div>
+    </div>
+
+    <script src="app.js"></script>
+  </body>
+</html>
