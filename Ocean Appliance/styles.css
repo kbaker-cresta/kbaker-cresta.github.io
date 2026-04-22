@@ -512,14 +512,11 @@ textarea {
 
 .form-layout {
   flex: 1;
-  display: grid;
-  grid-template-columns: minmax(0, 1fr) 280px;
-  gap: 0;
-  align-items: start;
+  display: block;
 }
 .form-main {
   padding: 12px 20px 32px;
-  max-width: 1120px;
+  max-width: 1200px;
 }
 
 .tab__caret {
@@ -818,58 +815,6 @@ textarea {
 .ref-list li {
   margin-bottom: 8px;
 }
-.side-pane {
-  border-left: 1px solid var(--border-subtle);
-  background: #fff;
-  min-height: calc(100vh - 48px);
-  padding: 16px 12px;
-  position: sticky;
-  top: 0;
-  align-self: stretch;
-}
-.side-pane__title {
-  font-size: 11px;
-  font-weight: 600;
-  text-transform: uppercase;
-  letter-spacing: 0.04em;
-  color: var(--text-secondary);
-  margin-bottom: 8px;
-}
-.side-pane__title--spaced {
-  margin-top: 20px;
-}
-.side-pane__list {
-  list-style: none;
-  margin: 0;
-  padding: 0;
-}
-.side-link {
-  display: block;
-  width: 100%;
-  text-align: left;
-  border: none;
-  background: transparent;
-  padding: 8px 8px;
-  font-size: 13px;
-  color: var(--primary);
-  cursor: pointer;
-  border-radius: 2px;
-}
-.side-link:hover {
-  background: #f3f2f1;
-}
-.copilot-box {
-  padding: 10px 12px;
-  border: 1px solid var(--border-subtle);
-  border-radius: var(--radius-card);
-  background: #faf9f8;
-}
-.copilot-box__text {
-  margin: 0;
-  font-size: 12px;
-  color: var(--text-secondary);
-  line-height: 1.5;
-}
 #panel-products .subgrid__head,
 #panel-products .subgrid__row {
   grid-template-columns: 2fr 0.5fr 0.5fr 0.8fr;
@@ -879,15 +824,6 @@ textarea {
   grid-template-columns: 2fr 0.6fr 0.8fr;
 }
 @media (max-width: 1024px) {
-  .form-layout {
-    grid-template-columns: 1fr;
-  }
-  .side-pane {
-    position: static;
-    border-left: none;
-    border-top: 1px solid var(--border-subtle);
-    min-height: auto;
-  }
   .subgrid__head,
   .subgrid__row {
     grid-template-columns: 1fr 1fr;
